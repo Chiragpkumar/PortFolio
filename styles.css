@@ -1,0 +1,376 @@
+/* Global Styles */
+:root {
+    /* Primary gradient colors */
+    --gradient-1: #FF0000;  /* Bright Red */
+    --gradient-2: #FF4500;  /* Red-Orange */
+    --gradient-3: #FFD700;  /* Golden Yellow */
+    --gradient-4: #FF1493;  /* Deep Pink */
+    
+    /* Accent colors */
+    --accent-1: #FF3333;    /* Light Red */
+    --accent-2: #FF6B6B;    /* Coral Red */
+    --accent-3: #FFB700;    /* Warm Yellow */
+    
+    /* Background colors */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;  /* Clean Gray */
+    --bg-tertiary: #f1f3f5;   /* Light Cool Gray */
+    --bg-dark: #212529;       /* Dark Gray */
+    --bg-gradient: linear-gradient(135deg, #f8f9fa, #ffffff);  /* Subtle Gradient */
+    
+    /* Text colors */
+    --text-primary: #212529;
+    --text-secondary: #495057;
+    --text-light: #868e96;
+    
+    /* Original variables */
+    --primary-color: var(--gradient-1);
+    --secondary-color: var(--gradient-3);
+    --text-color: var(--text-primary);
+    --light-gray: var(--bg-tertiary);
+    --background-color: var(--bg-secondary);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--bg-gradient);
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem 2rem;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(120deg, #FF0000, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Mobile Navigation */
+.menu-btn {
+    display: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(26, 26, 26, 0.98);
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, 
+        #1a1a1a 0%,
+        #2d2d2d 50%,
+        #1a1a1a 100%
+    );
+    margin-top: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(255, 0, 0, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.15) 0%, transparent 50%);
+    z-index: 1;
+}
+
+/* Typing Animation */
+.typing-text {
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.typing-text h1 {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.15em;
+    animation: typing 3.5s steps(30, end),
+               blink-caret .75s step-end infinite;
+    background: linear-gradient(120deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-right: 3px solid var(--gradient-1);
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--gradient-1) }
+}
+
+.hero .typing-text h1 {
+    color: #ffffff;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(120deg, 
+        #FF0000,
+        #FF4500,
+        #FFD700
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 10px rgba(255, 0, 0, 0.3);
+}
+
+.hero .tagline {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* Profile Image in Hero */
+.hero .profile-image {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 2.5rem;
+    position: relative;
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(120deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
+    box-shadow: 0 5px 20px rgba(255, 0, 0, 0.2);
+}
+
+.hero .profile-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--bg-primary);
+}
+
+.hero .profile-image::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, 
+        rgba(255, 0, 0, 0.5),
+        rgba(255, 69, 0, 0.5),
+        rgba(255, 215, 0, 0.5)
+    );
+    z-index: -1;
+    animation: rotateGradient 5s linear infinite;
+}
+
+@keyframes rotateGradient {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Hero Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+
+.cta-primary, .cta-secondary {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.cta-primary {
+    background: linear-gradient(120deg, var(--gradient-1), var(--gradient-2));
+    color: white;
+    border: none;
+    box-shadow: 0 5px 20px rgba(255, 0, 0, 0.3);
+}
+
+.cta-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.cta-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
+}
+
+.cta-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+/* Profile Image */
+.profile-image {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 2.5rem;
+    position: relative;
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(120deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
+    box-shadow: 0 5px 20px rgba(255, 0, 0, 0.2);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--bg-primary);
+}
+
+.profile-image::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, 
+        rgba(255, 0, 0, 0.5),
+        rgba(255, 69, 0, 0.5),
+        rgba(255, 215, 0, 0.5)
+    );
+    z-index: -1;
+    animation: rotateGradient 5s linear infinite;
+}
+
+@keyframes rotateGradient {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 1.5rem;
+    }
+
+    .typing-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero .tagline {
+        font-size: 1.2rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .profile-image {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+/* ... rest of the code remains the same ... */
