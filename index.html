@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHIRAG P KUMAR :: SYSTEM INTERFACE</title>
+    <meta name="description" content="Chirag P Kumar - Full Stack Developer and Cybersecurity Enthusiast. Portfolio showcasing projects and skills in web development and cybersecurity.">
+    <meta name="keywords" content="Chirag P Kumar, Full Stack Developer, Web Development, Cybersecurity, Portfolio">
+    <meta name="author" content="Chirag P Kumar">
+    <meta property="og:title" content="CHIRAG P KUMAR :: SYSTEM INTERFACE">
+    <meta property="og:description" content="Full Stack Developer and Cybersecurity Enthusiast">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#0f0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="matrix.css">
+    <link rel="stylesheet" href="matrix-enhanced.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&family=Rubik+Glitch&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="cyber-theme">
+    <div class="scanline"></div>
+    
+    <!-- Boot Screen -->
+    <div class="boot-screen">
+        <div class="boot-content">
+            <div class="boot-text">
+                <!-- Boot messages will be dynamically added here -->
+            </div>
+            <div class="press-key-prompt" style="display: none;">
+                <p class="blink">> PRESS ANY KEY TO CONTINUE_</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="matrix-container">
+        <canvas id="matrixCanvas"></canvas>
+    </div>
+    <div class="noise-overlay"></div>
+    <div class="crt-overlay"></div>
+    
+    <!-- Main Content -->
+    <div class="crt main-content" style="display: none;">
+        <!-- Scanline Effect -->
+        <div class="scanline"></div>
+        
+        <!-- Noise Overlay -->
+        <div class="noise"></div>
+        
+        <!-- CRT Effect Wrapper -->
+        <div class="crt">
+            <!-- System Boot Sequence -->
+            <div id="boot-sequence" class="boot-sequence">
+                <div class="boot-content">
+                    <div class="system-info">
+                        <p class="terminal-text">SYSTEM v2.0.4</p>
+                        <p class="terminal-text">BUILD: 20231224_ALPHA</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- System Status -->
+            <div class="system-status">
+                <div class="status-item">
+                    <span class="status-label">UPTIME:</span>
+                    <span id="uptime" class="status-value">00:00:00</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">STATUS:</span>
+                    <span class="status-value online">ONLINE</span>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="cyber-nav" role="navigation" aria-label="Main navigation">
+                <div class="nav-content">
+                    <a href="#home" class="nav-link glitch" data-text="HOME" aria-current="page">HOME</a>
+                    <a href="#about" class="nav-link glitch" data-text="ABOUT" aria-label="About section">ABOUT</a>
+                    <a href="#skills" class="nav-link glitch" data-text="SKILLS" aria-label="Skills section">SKILLS</a>
+                    <a href="#projects" class="nav-link glitch" data-text="PROJECTS" aria-label="Projects section">PROJECTS</a>
+                    <a href="#contact" class="nav-link glitch" data-text="CONTACT" aria-label="Contact section">CONTACT</a>
+                </div>
+                <button class="menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Hero Section -->
+                <section id="home" class="hero-section terminal-window">
+                    <div class="hero-content cyber-border">
+                        <div class="hero-header">
+                            <div class="terminal-prompt">
+                                <span class="prompt-marker">></span>
+                                <span class="prompt-text">INITIALIZING_PROFILE.exe</span>
+                            </div>
+                            
+                            <h1 class="glitch mega-glitch" data-text="CHIRAG P KUMAR">CHIRAG P KUMAR</h1>
+                            <div class="hero-subtitle typewriter">
+                                <span class="accent-text">> USER_ROLE:</span> FULL STACK DEVELOPER | PENETRATION TESTER | TECH ENTHUSIAST
+                            </div>
+                            
+                            <div class="cyber-box mission-statement">
+                                <p class="terminal-text">> MISSION_STATEMENT:</p>
+                                <p class="statement-text">Turning ideas into innovative digital solutions with expertise in app and web development, cybersecurity, and machine learning.</p>
+                            </div>
+
+                            <div class="cyber-box specialization">
+                                <p class="terminal-text">> CORE_COMPETENCIES:</p>
+                                <ul class="specs-list">
+                                    <li><span class="bullet">></span> Building scalable and secure applications using Java, Spring Boot, and Python</li>
+                                    <li><span class="bullet">></span> Creating responsive and user-friendly web interfaces with Django, React.js, and Streamlit</li>
+                                    <li><span class="bullet">></span> Enhancing security protocols through advanced penetration testing</li>
+                                </ul>
+                            </div>
+
+                            <div class="cyber-box connection-ports">
+                                <p class="terminal-text">> NETWORK_PROTOCOLS:</p>
+                                <div class="social-links">
+                                    <a href="https://github.com/Chiragpkumar" target="_blank" rel="noopener noreferrer" class="cyber-link">
+                                        <i class="fab fa-github"></i> GITHUB_ACCESS
+                                    </a>
+                                    <a href="https://linkedin.com/in/chiragpkumar" target="_blank" rel="noopener noreferrer" class="cyber-link">
+                                        <i class="fab fa-linkedin"></i> LINKEDIN_CONNECT
+                                    </a>
+                                    <a href="mailto:chiragpkumar@gmail.com" class="cyber-link">
+                                        <i class="fas fa-envelope"></i> INITIALIZE_EMAIL
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hero-cta">
+                            <a href="https://drive.google.com/file/d/1FYN9fNlIQEwpG4UKFEbr9MEtBPta_f18/view?usp=drive_link" target="_blank" class="btn cyber-btn">
+                                <span class="btn-content">
+                                    <i class="fas fa-file-download"></i>
+                                    <span class="glitch-text">DOWNLOAD_CV</span>
+                                </span>
+                                <span class="btn-borders">
+                                    <span class="btn-border-l"></span>
+                                    <span class="btn-border-r"></span>
+                                </span>
+                            </a>
+                            <a href="#projects" class="btn cyber-btn">
+                                <span class="btn-content">
+                                    <i class="fas fa-project-diagram"></i>
+                                    <span class="glitch-text">VIEW_PORTFOLIO</span>
+                                </span>
+                                <span class="btn-borders">
+                                    <span class="btn-border-l"></span>
+                                    <span class="btn-border-r"></span>
+                                </span>
+                            </a>
+                            <a href="#contact" class="btn cyber-btn">
+                                <span class="btn-content">
+                                    <i class="fas fa-terminal"></i>
+                                    <span class="glitch-text">INITIALIZE_CONTACT</span>
+                                </span>
+                                <span class="btn-borders">
+                                    <span class="btn-border-l"></span>
+                                    <span class="btn-border-r"></span>
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="cyber-box tagline">
+                            <p class="terminal-text blink">> CODE. SECURE. INNOVATE. REPEAT_</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- About Section -->
+                <section id="about" class="about-section terminal-window">
+                    <div class="section-header">
+                        <h2 class="glitch" data-text="SYSTEM_INFO">SYSTEM_INFO</h2>
+                        <div class="loading-bar"></div>
+                    </div>
+                    
+                    <div class="about-content cyber-border">
+                        <div class="terminal-window">
+                            <div class="window-header">
+                                <span class="window-title">about.exe</span>
+                                <div class="window-buttons">
+                                    <span class="minimize"></span>
+                                    <span class="maximize"></span>
+                                    <span class="close"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="window-content">
+                                <!-- Introduction -->
+                                <div class="terminal-section">
+                                    <p class="terminal-prompt">> EXECUTING bio.sh...</p>
+                                    <div class="bio-text">
+                                        Hello! I'm Chirag P Kumar, a Full Stack Developer and Penetration Tester with a deep passion for creating innovative, secure, and user-friendly digital solutions. Based in Hyderabad, India, I bring expertise in building scalable applications using Java, Python, and modern frameworks like Spring Boot, Django, and Streamlit. My journey in technology is fueled by a relentless drive to solve complex problems and continuously evolve as a developer.
+                                    </div>
+                                </div>
+
+                                <!-- Current Role -->
+                                <div class="terminal-section">
+                                    <p class="terminal-prompt">> CURRENT_DEPLOYMENT:</p>
+                                    <div class="role-info cyber-box">
+                                        <p class="role-title">Full Stack Developer & Penetration Tester @ Kagami Company</p>
+                                        <ul class="role-details">
+                                            <li><span class="bullet">></span> Developing secure and scalable web solutions</li>
+                                            <li><span class="bullet">></span> Strengthening cybersecurity by identifying and mitigating vulnerabilities</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- What I Do -->
+                                <div class="terminal-section">
+                                    <p class="terminal-prompt">> EXECUTING capabilities.sh...</p>
+                                    <div class="capabilities-grid">
+                                        <div class="capability cyber-box">
+                                            <h3 class="glitch-small">FULL_STACK_DEVELOPMENT</h3>
+                                            <p>Designing and building seamless web applications with robust backends and responsive frontends.</p>
+                                        </div>
+                                        <div class="capability cyber-box">
+                                            <h3 class="glitch-small">CYBERSECURITY_EXPERTISE</h3>
+                                            <p>Enhancing system security by identifying vulnerabilities and conducting penetration tests using tools like Kali Linux.</p>
+                                        </div>
+                                        <div class="capability cyber-box">
+                                            <h3 class="glitch-small">INNOVATIVE_PROBLEM_SOLVING</h3>
+                                            <p>Leveraging AI/ML models to address real-world challenges, such as early Alzheimer's detection and threat analysis.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Skills -->
+                                <div class="terminal-section">
+                                    <p class="terminal-prompt">> ANALYZING skill_matrix.dat...</p>
+                                    <div class="skills-container">
+                                        <div class="skill-category cyber-box">
+                                            <h4>PROGRAMMING</h4>
+                                            <div class="skill-tags">
+                                                <span class="skill-tag">Java</span>
+                                                <span class="skill-tag">Python</span>
+                                                <span class="skill-tag">C++</span>
+                                                <span class="skill-tag">HTML</span>
+                                                <span class="skill-tag">CSS</span>
+                                                <span class="skill-tag">JavaScript</span>
+                                            </div>
+                                        </div>
+                                        <div class="skill-category cyber-box">
+                                            <h4>FRAMEWORKS</h4>
+                                            <div class="skill-tags">
+                                                <span class="skill-tag">Spring Boot</span>
+                                                <span class="skill-tag">Django</span>
+                                                <span class="skill-tag">Streamlit</span>
+                                                <span class="skill-tag">React.js</span>
+                                            </div>
+                                        </div>
+                                        <div class="skill-category cyber-box">
+                                            <h4>SECURITY_TOOLS</h4>
+                                            <div class="skill-tags">
+                                                <span class="skill-tag">Kali Linux</span>
+                                                <span class="skill-tag">OWASP ZAP</span>
+                                            </div>
+                                        </div>
+                                        <div class="skill-category cyber-box">
+                                            <h4>INFRASTRUCTURE</h4>
+                                            <div class="skill-tags">
+                                                <span class="skill-tag">Docker</span>
+                                                <span class="skill-tag">Jenkins</span>
+                                                <span class="skill-tag">AWS</span>
+                                                <span class="skill-tag">MySQL</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Personal Info -->
+                                <div class="terminal-section">
+                                    <p class="terminal-prompt">> ACCESSING personal_data.enc...</p>
+                                    <div class="personal-info cyber-box">
+                                        <div class="info-item">
+                                            <span class="info-label">EDUCATION:</span>
+                                            <p>Pursuing B.Tech in Computer Science and Engineering @ MRIET, Hyderabad</p>
+                                        </div>
+                                        <div class="info-item">
+                                            <span class="info-label">LANGUAGES:</span>
+                                            <p>Malayalam, Hindi, English, Telugu</p>
+                                        </div>
+                                        <div class="info-item">
+                                            <span class="info-label">INTERESTS:</span>
+                                            <p>Reading books to expand knowledge, Gaming for creativity and strategic thinking</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Philosophy -->
+                                <div class="terminal-section">
+                                    <p class="terminal-prompt">> cat philosophy.txt</p>
+                                    <div class="philosophy-text cyber-box">
+                                        <p class="blink">"Technology is not just about solving problems; it's about creating opportunities for a better future. I believe in continuous learning, embracing challenges, and building solutions that make a meaningful impact."_</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Skills Section -->
+                <section id="skills" class="skills-section terminal-window">
+                    <div class="section-header">
+                        <h2 class="glitch" data-text="SKILL_MATRIX">SKILL_MATRIX</h2>
+                        <div class="loading-bar"></div>
+                    </div>
+
+                    <div class="skills-content cyber-border">
+                        <div class="terminal-window">
+                            <div class="window-header">
+                                <span class="window-title">skills.exe</span>
+                                <div class="window-buttons">
+                                    <span class="minimize"></span>
+                                    <span class="maximize"></span>
+                                    <span class="close"></span>
+                                </div>
+                            </div>
+
+                            <div class="window-content">
+                                <!-- Programming Languages -->
+                                <div class="skill-section">
+                                    <p class="terminal-prompt">> ANALYZING programming_languages.dat</p>
+                                    <div class="skill-grid">
+                                        <div class="skill-card cyber-box">
+                                            <h3>JAVA</h3>
+                                            <div class="skill-rating">
+                                                <div class="rating-bar" data-rating="4">
+                                                    <div class="rating-fill"></div>
+                                                </div>
+                                            </div>
+                                            <p>Expertise in building scalable backend applications using Spring Boot</p>
+                                        </div>
+                                        <div class="skill-card cyber-box">
+                                            <h3>PYTHON</h3>
+                                            <div class="skill-rating">
+                                                <div class="rating-bar" data-rating="5">
+                                                    <div class="rating-fill"></div>
+                                                </div>
+                                            </div>
+                                            <p>Proficient in automation, AI/ML projects, and full-stack development</p>
+                                        </div>
+                                        <div class="skill-card cyber-box">
+                                            <h3>C++</h3>
+                                            <div class="skill-rating">
+                                                <div class="rating-bar" data-rating="4">
+                                                    <div class="rating-fill"></div>
+                                                </div>
+                                            </div>
+                                            <p>Strong foundation in algorithms and competitive programming</p>
+                                        </div>
+                                        <div class="skill-card cyber-box">
+                                            <h3>WEB_STACK</h3>
+                                            <div class="skill-rating">
+                                                <div class="rating-bar" data-rating="4">
+                                                    <div class="rating-fill"></div>
+                                                </div>
+                                            </div>
+                                            <p>HTML, CSS, JavaScript: Crafting responsive and modern web interfaces</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Frameworks -->
+                                <div class="skill-section">
+                                    <p class="terminal-prompt">> LOADING frameworks.sys</p>
+                                    <div class="skill-grid">
+                                        <div class="skill-card cyber-box">
+                                            <h3>SPRING_BOOT</h3>
+                                            <div class="skill-rating">
+                                                <div class="rating-bar" data-rating="4">
+                                                    <div class="rating-fill"></div>
+                                                </div>
+                                            </div>
+                                            <p>Developing robust, secure, and scalable APIs</p>
+                                        </div>
+                                        <div class="skill-card cyber-box">
+                                            <h3>DJANGO</h3>
+                                            <div class="skill-rating">
+                                                <div class="rating-bar" data-rating="4">
+                                                    <div class="rating-fill"></div>
+                                                </div>
+                                            </div>
+                                            <p>Building full-stack web applications with rapid development</p>
+                                        </div>
+                                        <div class="skill-card cyber-box">
+                                            <h3>REACT.JS</h3>
+                                            <div class="skill-rating">
+                                                <div class="rating-bar" data-rating="3">
+                                                    <div class="rating-fill"></div>
+                                                </div>
+                                            </div>
+                                            <p>Creating dynamic and interactive frontend components</p>
+                                        </div>
+                                        <div class="skill-card cyber-box">
+                                            <h3>STREAMLIT</h3>
+                                            <div class="skill-rating">
+                                                <div class="rating-bar" data-rating="4">
+                                                    <div class="rating-fill"></div>
+                                                </div>
+                                            </div>
+                                            <p>Deploying AI/ML models with intuitive web interfaces</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- DevOps & Cloud -->
+                                <div class="skill-section">
+                                    <p class="terminal-prompt">> ACCESSING infrastructure.config</p>
+                                    <div class="skill-grid">
+                                        <div class="skill-card cyber-box">
+                                            <h3>DOCKER</h3>
+                                            <div class="skill-rating">
+                                                <div class="rating-bar" data-rating="4">
+                                                    <div class="rating-fill"></div>
+                                                </div>
+                                            </div>
+                                            <p>Containerization for seamless application deployment</p>
+                                        </div>
+                                        <div class="skill-card cyber-box">
+                                            <h3>JENKINS</h3>
+                                            <div class="skill-rating">
+                                                <div class="rating-bar" data-rating="3">
+                                                    <div class="rating-fill"></div>
+                                                </div>
+                                            </div>
+                                            <p>CI/CD pipelines for automated deployment</p>
+                                        </div>
+                                        <div class="skill-card cyber-box">
+                                            <h3>AWS</h3>
+                                            <div class="skill-rating">
+                                                <div class="rating-bar" data-rating="3">
+                                                    <div class="rating-fill"></div>
+                                                </div>
+                                            </div>
+                                            <p>Cloud services (EC2, S3) for scalable solutions</p>
+                                        </div>
+                                        <div class="skill-card cyber-box">
+                                            <h3>MYSQL</h3>
+                                            <div class="skill-rating">
+                                                <div class="rating-bar" data-rating="4">
+                                                    <div class="rating-fill"></div>
+                                                </div>
+                                            </div>
+                                            <p>Designing and managing relational databases</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Security Tools -->
+                                <div class="skill-section">
+                                    <p class="terminal-prompt">> DECRYPTING security_tools.enc</p>
+                                    <div class="skill-grid">
+                                        <div class="skill-card cyber-box">
+                                            <h3>KALI_LINUX</h3>
+                                            <div class="skill-rating">
+                                                <div class="rating-bar" data-rating="4">
+                                                    <div class="rating-fill"></div>
+                                                </div>
+                                            </div>
+                                            <p>Penetration testing and vulnerability assessment</p>
+                                        </div>
+                                        <div class="skill-card cyber-box">
+                                            <h3>OWASP_ZAP</h3>
+                                            <div class="skill-rating">
+                                                <div class="rating-bar" data-rating="4">
+                                                    <div class="rating-fill"></div>
+                                                </div>
+                                            </div>
+                                            <p>Web application security testing and analysis</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Core Skills -->
+                                <div class="skill-section">
+                                    <p class="terminal-prompt">> LOADING core_competencies.sys</p>
+                                    <div class="core-skills-grid">
+                                        <div class="core-skill cyber-box">
+                                            <h3>FULL_STACK_DEVELOPMENT</h3>
+                                            <p>End-to-end application development with secure backend systems and responsive frontends</p>
+                                        </div>
+                                        <div class="core-skill cyber-box">
+                                            <h3>AGILE_METHODOLOGIES</h3>
+                                            <p>Delivering projects in iterative cycles for continuous improvement</p>
+                                        </div>
+                                        <div class="core-skill cyber-box">
+                                            <h3>CRITICAL_THINKING</h3>
+                                            <p>Solving complex problems with innovative approaches</p>
+                                        </div>
+                                        <div class="core-skill cyber-box">
+                                            <h3>LEADERSHIP</h3>
+                                            <p>Successfully leading teams in hackathons and technical events</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Tools & Platforms -->
+                                <div class="skill-section">
+                                    <p class="terminal-prompt">> SCANNING environment.cfg</p>
+                                    <div class="tools-grid cyber-box">
+                                        <div class="tools-category">
+                                            <h3>DEV_ENVIRONMENT</h3>
+                                            <div class="tool-tags">
+                                                <span class="tool-tag">IntelliJ IDEA</span>
+                                                <span class="tool-tag">VS Code</span>
+                                                <span class="tool-tag">PyCharm</span>
+                                            </div>
+                                        </div>
+                                        <div class="tools-category">
+                                            <h3>OPERATING_SYSTEMS</h3>
+                                            <div class="tool-tags">
+                                                <span class="tool-tag">Windows</span>
+                                                <span class="tool-tag">macOS</span>
+                                                <span class="tool-tag">Linux</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Projects Section -->
+                <section id="projects" class="projects-section terminal-window">
+                    <div class="section-header">
+                        <h2 class="glitch" data-text="PROJECT_ARCHIVES">PROJECT_ARCHIVES</h2>
+                        <div class="loading-bar"></div>
+                    </div>
+
+                    <div class="projects-content cyber-border">
+                        <div class="terminal-window">
+                            <div class="window-header">
+                                <span class="window-title">projects.exe</span>
+                                <div class="window-buttons">
+                                    <span class="minimize"></span>
+                                    <span class="maximize"></span>
+                                    <span class="close"></span>
+                                </div>
+                            </div>
+
+                            <div class="window-content">
+                                <p class="terminal-prompt">> ACCESSING_PROJECT_DATABASE...</p>
+                                
+                                <div class="projects-grid">
+                                    <!-- AI Disease Prediction -->
+                                    <div class="project-card cyber-box">
+                                        <div class="project-header">
+                                            <h3 class="glitch-small">AI_DISEASE_PREDICTION</h3>
+                                            <div class="tech-stack">
+                                                <span class="tech-tag">Python</span>
+                                                <span class="tech-tag">Machine Learning</span>
+                                                <span class="tech-tag">Scikit-learn</span>
+                                            </div>
+                                        </div>
+                                        <div class="project-content">
+                                            <p>Developed an intelligent system to predict diseases based on symptoms using machine learning algorithms.</p>
+                                            <ul class="project-highlights">
+                                                <li><span class="bullet">></span> Achieved 25% accuracy improvement over traditional methods</li>
+                                            </ul>
+                                        </div>
+                                        <div class="project-links">
+                                            <a href="https://github.com/Chiragpkumar/disease-prediction-system" target="_blank" class="cyber-link">
+                                                <i class="fab fa-github"></i> VIEW_SOURCE
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- File Organization Tool -->
+                                    <div class="project-card cyber-box">
+                                        <div class="project-header">
+                                            <h3 class="glitch-small">FILE_ORGANIZATION_TOOL</h3>
+                                            <div class="tech-stack">
+                                                <span class="tech-tag">Python</span>
+                                                <span class="tech-tag">OS Libraries</span>
+                                            </div>
+                                        </div>
+                                        <div class="project-content">
+                                            <p>Designed a Python script to automate file classification and organization.</p>
+                                            <ul class="project-highlights">
+                                                <li><span class="bullet">></span> Reduced manual effort and improved digital workspace efficiency</li>
+                                            </ul>
+                                        </div>
+                                        <div class="project-links">
+                                            <a href="https://github.com/Chiragpkumar/Smart-File-Organizer/tree/main" target="_blank" class="cyber-link">
+                                                <i class="fab fa-github"></i> VIEW_SOURCE
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Cyber Threat Detection -->
+                                    <div class="project-card cyber-box">
+                                        <div class="project-header">
+                                            <h3 class="glitch-small">CYBER_THREAT_DETECTION</h3>
+                                            <div class="tech-stack">
+                                                <span class="tech-tag">Python</span>
+                                                <span class="tech-tag">Django</span>
+                                                <span class="tech-tag">Neural Networks</span>
+                                            </div>
+                                        </div>
+                                        <div class="project-content">
+                                            <p>Built an advanced system to identify and analyze cyber threats in real time using Artificial Neural Networks.</p>
+                                            <ul class="project-highlights">
+                                                <li><span class="bullet">></span> Enhanced security protocols for enterprise applications</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Alzheimer's Detection -->
+                                    <div class="project-card cyber-box">
+                                        <div class="project-header">
+                                            <h3 class="glitch-small">ALZHEIMERS_DETECTION</h3>
+                                            <div class="tech-stack">
+                                                <span class="tech-tag">Python</span>
+                                                <span class="tech-tag">TensorFlow</span>
+                                                <span class="tech-tag">Streamlit</span>
+                                                <span class="tech-tag">OpenCV</span>
+                                            </div>
+                                        </div>
+                                        <div class="project-content">
+                                            <p>Engineered a system for early detection of Alzheimer's disease using medical imaging and cognitive assessment analysis.</p>
+                                            <ul class="project-highlights">
+                                                <li><span class="bullet">></span> Delivered interpretable AI predictions with a user-friendly interface</li>
+                                            </ul>
+                                        </div>
+                                        <div class="project-links">
+                                            <a href="https://github.com/Chiragpkumar/Advanced-Alzheimer-s-Detection-Assistant" target="_blank" class="cyber-link">
+                                                <i class="fab fa-github"></i> VIEW_SOURCE
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Portfolio Website -->
+                                    <div class="project-card cyber-box">
+                                        <div class="project-header">
+                                            <h3 class="glitch-small">PORTFOLIO_WEBSITE</h3>
+                                            <div class="tech-stack">
+                                                <span class="tech-tag">HTML</span>
+                                                <span class="tech-tag">CSS</span>
+                                                <span class="tech-tag">JavaScript</span>
+                                                <span class="tech-tag">Bootstrap</span>
+                                            </div>
+                                        </div>
+                                        <div class="project-content">
+                                            <p>Created a responsive personal portfolio showcasing projects and achievements.</p>
+                                            <ul class="project-highlights">
+                                                <li><span class="bullet">></span> Improved professional engagement by 40%</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Game Development -->
+                                    <div class="project-card cyber-box">
+                                        <div class="project-header">
+                                            <h3 class="glitch-small">GAME_DEVELOPMENT</h3>
+                                            <div class="tech-stack">
+                                                <span class="tech-tag">Python</span>
+                                                <span class="tech-tag">Pygame</span>
+                                            </div>
+                                        </div>
+                                        <div class="project-content">
+                                            <p>Developed multiple interactive and educational games.</p>
+                                            <ul class="project-highlights">
+                                                <li><span class="bullet">></span> Focused on algorithm optimization and enhancing user engagement</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <section id="contact" class="contact-section terminal-window">
+                    <div class="section-header">
+                        <h2 class="glitch" data-text="ESTABLISH_CONNECTION">ESTABLISH_CONNECTION</h2>
+                        <div class="loading-bar"></div>
+                    </div>
+
+                    <div class="contact-content cyber-border">
+                        <div class="terminal-window">
+                            <div class="window-header">
+                                <span class="window-title">contact.exe</span>
+                                <div class="window-buttons">
+                                    <span class="minimize"></span>
+                                    <span class="maximize"></span>
+                                    <span class="close"></span>
+                                </div>
+                            </div>
+
+                            <div class="window-content">
+                                <div class="contact-intro">
+                                    <p class="terminal-prompt">> INITIALIZING_COMMUNICATION_PROTOCOLS...</p>
+                                    <div class="intro-text">
+                                        I'm always open to exciting opportunities, collaborations, and discussions about technology. Whether you have a project in mind or just want to connect, feel free to reach out through any available channel.
+                                    </div>
+                                </div>
+
+                                <div class="contact-grid">
+                                    <!-- Direct Contact -->
+                                    <div class="contact-info cyber-box">
+                                        <h3 class="glitch-small">DIRECT_CHANNELS</h3>
+                                        <div class="contact-item">
+                                            <i class="fas fa-envelope"></i>
+                                            <span class="contact-label">EMAIL_ADDRESS:</span>
+                                            <a href="mailto:chiragpkumar@gmail.com" class="cyber-link">chiragpkumar@gmail.com</a>
+                                        </div>
+                                        <div class="contact-item">
+                                            <i class="fas fa-phone"></i>
+                                            <span class="contact-label">PHONE_NUMBER:</span>
+                                            <a href="tel:+917842107927" class="cyber-link">+91 78421 07927</a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Social Links -->
+                                    <div class="social-links cyber-box">
+                                        <h3 class="glitch-small">NETWORK_NODES</h3>
+                                        <div class="social-grid">
+                                            <a href="https://github.com/Chiragpkumar" target="_blank" class="social-item">
+                                                <i class="fab fa-github"></i>
+                                                <span>GitHub</span>
+                                            </a>
+                                            <a href="https://linkedin.com/in/chiragpkumar" target="_blank" class="social-item">
+                                                <i class="fab fa-linkedin"></i>
+                                                <span>LinkedIn</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Contact Form -->
+                                <div class="contact-form-section">
+                                    <p class="terminal-prompt">> INITIALIZING_MESSAGE_INTERFACE</p>
+                                    <form id="contactForm" class="cyber-form">
+                                        <div class="form-group">
+                                            <label for="name">IDENTIFY_YOURSELF:</label>
+                                            <input type="text" id="name" name="name" class="cyber-input" required>
+                                            <div class="input-border"></div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="email">COMMUNICATION_NODE:</label>
+                                            <input type="email" id="email" name="email" class="cyber-input" required>
+                                            <div class="input-border"></div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="message">TRANSMISSION_CONTENT:</label>
+                                            <textarea id="message" name="message" class="cyber-input" rows="5" required></textarea>
+                                            <div class="input-border"></div>
+                                        </div>
+                                        
+                                        <button type="submit" class="cyber-button">
+                                            <span class="btn-content">
+                                                <i class="fas fa-paper-plane"></i>
+                                                TRANSMIT_MESSAGE
+                                            </span>
+                                            <span class="btn-borders">
+                                                <span class="btn-border-l"></span>
+                                                <span class="btn-border-r"></span>
+                                            </span>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- Footer -->
+            <footer class="footer cyber-border">
+                <div class="footer-content">
+                    <div class="system-info">
+                        <p class="terminal-text">> SYSTEM_VERSION: 2024.1.0</p>
+                        <p class="terminal-text">> LAST_UPDATE: <span id="last-update"></span></p>
+                    </div>
+                    <p class="copyright terminal-text">> 2024 CHIRAG P KUMAR | ALL_RIGHTS_RESERVED</p>
+                    <div class="footer-links">
+                        <a href="#" class="terminal-text">> PRIVACY_POLICY</a>
+                        <a href="#" class="terminal-text">> SECURITY_INFO</a>
+                        <a href="#" class="terminal-text">> DEBUG_CONSOLE</a>
+                    </div>
+                </div>
+                <div class="loading-bar"></div>
+            </footer>
+        </div>
+
+        <!-- Scripts -->
+        <script src="script.js"></script>
+    </body>
+</html>
