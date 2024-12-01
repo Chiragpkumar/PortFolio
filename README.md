@@ -2,6 +2,8 @@
 
 A matrix-themed personal portfolio showcasing my full-stack development and cybersecurity skills through an immersive, interactive web experience.
 
+https://chiragpkumar.netlify.app/
+
 ## 🚀 Features
 
 - **Matrix-Inspired Boot Sequence**
