@@ -473,14 +473,17 @@ document.addEventListener('DOMContentLoaded', () => {
             // Start typing boot messages
             await this.typeMessages();
             
-            // Show press key prompt
+            // Show press key prompt and update text
             if (this.pressKeyPrompt) {
                 this.pressKeyPrompt.style.display = 'block';
+                this.pressKeyPrompt.innerHTML = 'PRESS ANY KEY OR CLICK/TAP TO CONTINUE_';
                 this.bootComplete = true;
             }
             
-            // Add key press listener
-            document.addEventListener('keypress', this.handleKeyPress.bind(this));
+            // Add event listeners
+            document.addEventListener('keypress', this.handleContinue.bind(this));
+            document.addEventListener('click', this.handleContinue.bind(this));
+            document.addEventListener('touchstart', this.handleContinue.bind(this));
         }
 
         async typeMessages() {
@@ -516,11 +519,15 @@ document.addEventListener('DOMContentLoaded', () => {
             return new Promise(resolve => setTimeout(resolve, ms));
         }
 
-        handleKeyPress(event) {
-            if (!this.bootComplete) return;
+        handleContinue(event) {
+            // Prevent multiple triggers
+            if (!this.bootComplete || this.isTransitioning) return;
+            this.isTransitioning = true;
             
-            // Remove key press listener
-            document.removeEventListener('keypress', this.handleKeyPress.bind(this));
+            // Remove all event listeners
+            document.removeEventListener('keypress', this.handleContinue.bind(this));
+            document.removeEventListener('click', this.handleContinue.bind(this));
+            document.removeEventListener('touchstart', this.handleContinue.bind(this));
             
             // Fade out boot screen
             if (this.bootScreen) {
